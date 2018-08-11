@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login-module/login.module';
 import { HomeModule } from './home/home-module/home.module';
-import { ServicesModule } from './services/services/services.module';
+import { ServicesModule } from './services/services-module/services.module';
+import {AppRoutingModule} from './app-routing/app-routing.module'
 
 
 @NgModule({
