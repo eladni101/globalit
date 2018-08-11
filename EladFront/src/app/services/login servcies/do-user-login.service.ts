@@ -16,5 +16,6 @@ export class DoUserLoginService {
         this.userStateService.setEmail(currentUser.email);
         this.router.navigateByUrl("home")
      }
+     return true;
     }
 }

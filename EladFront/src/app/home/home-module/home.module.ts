@@ -6,6 +6,7 @@ import {CanMoveHomeService} from '../../services/home-services/can-move-home.ser
 
 import { HomeViewComponent } from '../home-view/home-view.component';
 
+import {HeaderComponent} from '../../header/header.component'
 const HomeRoutes: Routes = [
   {path:'home',canActivate:[CanMoveHomeService],component:HomeViewComponent}
 ]
@@ -15,7 +16,7 @@ const HomeRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(HomeRoutes)
   ],
-  declarations: [HomeViewComponent],
-  exports:[HomeViewComponent]
+  declarations: [HomeViewComponent,HeaderComponent],
+  exports:[HomeViewComponent,HeaderComponent]
 })
 export class HomeModule { }

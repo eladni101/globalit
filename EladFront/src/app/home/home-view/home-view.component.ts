@@ -10,6 +10,7 @@ export class HomeViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.getElementsByTagName("body")[0].setAttribute("background",'null');
   }
 
 }

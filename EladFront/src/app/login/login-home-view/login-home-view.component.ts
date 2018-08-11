@@ -11,7 +11,7 @@ import {checkEmailValidator} from '../../validators/email-check'
   templateUrl: './login-home-view.component.html',
   styleUrls: ['./login-home-view.component.css']
 })
-export class LoginHomeViewComponent implements OnInit {
+export class LoginHomeViewComponent implements OnInit,IResponseServer {
 
   profileForm = new FormGroup({
     email: new FormControl('',[checkEmailValidator()]),
@@ -21,13 +21,14 @@ export class LoginHomeViewComponent implements OnInit {
 
   ngOnInit() {
     document.getElementsByTagName("body")[0].setAttribute("background",'LoginForm');
-    this.serverService.SetUrl("http://globalbit.co.il/front-end-assignment/login.php");
+    this.serverService.SetUrl("login.php");
   }
 
   onSubmit(){
-    this.userStateService.setlogIn(true)
-    localStorage.setItem("currentUser",JSON.stringify({email:this.profileForm.get('email').value }));
-    this.router.navigateByUrl("home") 
+    // this.userStateService.setlogIn(true)
+    // localStorage.setItem("currentUser",JSON.stringify({email:this.profileForm.get('email').value }));
+    // this.router.navigateByUrl("home") 
+    this.serverService.Post(null,this);
   }
   HandleResponse(data:any){
     console.log(data);
