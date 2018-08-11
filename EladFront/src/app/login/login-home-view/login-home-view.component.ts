@@ -25,10 +25,11 @@ export class LoginHomeViewComponent implements OnInit,IResponseServer {
   }
 
   onSubmit(){
-    // this.userStateService.setlogIn(true)
-    // localStorage.setItem("currentUser",JSON.stringify({email:this.profileForm.get('email').value }));
-    // this.router.navigateByUrl("home") 
-    this.serverService.Post(null,this);
+    let email =this.profileForm.get("email").value
+    let password =this.profileForm.get("password").value
+    let obj = {email:email,password:password}
+    console.log(JSON.stringify(obj))
+    this.serverService.Post(JSON.stringify(obj),this);
   }
   HandleResponse(data:any){
     console.log(data);

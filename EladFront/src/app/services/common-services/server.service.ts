@@ -11,7 +11,7 @@ export class ServerService {
  
   Post(data:any,responser:IResponseServer){
     let headers = new Headers()
-    headers.set("content-type","application/json")
+    headers.set("content-type","application/x-www-form-urlencoded; charset=UTF-8")
     let options = new RequestOptions({headers:headers})
     this.http.post(this.URL,data,options).subscribe((res:Response)=>
     {
@@ -21,7 +21,8 @@ export class ServerService {
 
   }
   SetUrl(url :string){
-    this.URL= url;
+    this.URL ="services/"
+    this.URL+= url;
   }
   Get(data:any,responser:IResponseServer){
     let gt = this.http.get(this.URL)

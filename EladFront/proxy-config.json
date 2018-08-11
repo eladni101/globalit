@@ -1,6 +1,11 @@
 {
-    "*":{
+    "services/*":{
         "target":"http://globalbit.co.il/front-end-assignment/",
-        "secure":false
+        "pathRewrite":{"^/services":""},
+        "secure":false,
+        "logLevel":"debug",
+        "changeOrigin":true
+
+
     }
 }
