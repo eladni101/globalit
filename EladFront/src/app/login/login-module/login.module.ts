@@ -7,6 +7,7 @@ import { LoginForgotViewComponent } from '../login-forgot-view/login-forgot-view
   imports: [
     CommonModule
   ],
-  declarations: [LoginHomeViewComponent, LoginForgotViewComponent]
+  declarations: [LoginHomeViewComponent, LoginForgotViewComponent],
+  exports:[LoginHomeViewComponent,LoginForgotViewComponent]
 })
 export class LoginModule { }
