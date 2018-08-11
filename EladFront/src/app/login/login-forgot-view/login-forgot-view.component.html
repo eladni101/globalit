@@ -1,3 +1,31 @@
-<p>
-  login-forgot-view works!
-</p>
+
+<div class="container">
+  <div class="login-form">
+  <div class="main-div">
+      <div class="panel">
+     <h2>User Login</h2>
+     <p>Please enter your email and password</p>
+     </div>
+      <form id="Login" [formGroup]="profileForm" 
+      (ngSubmit)="onSubmit()">
+          <div class="form-group">
+  
+  
+              <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+  
+          </div>
+          <div *ngIf="profileForm.get('email').errors">
+                <span *ngIf="profileForm.get('email').errors.emailNotVaild" error>
+                  {{profileForm.get('email').errors.emailNotVaild}} </span>
+        </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Send to email</button>
+  
+      </form>
+      </div>
+  </div>
+  </div>
+  
+  
+  
+  

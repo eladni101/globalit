@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormControl,FormGroup,Validators} from '@angular/forms'
+import {UserStateService} from '../../services/common-services/user-state.service'
+import {checkEmailValidator} from '../../validators/email-check'
 @Component({
   selector: 'app-login-forgot-view',
   templateUrl: './login-forgot-view.component.html',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginForgotViewComponent implements OnInit {
 
-  constructor() { }
+  profileForm = new FormGroup({
+    email: new FormControl('',[checkEmailValidator()]),
+  });
+  constructor(private userStateService :UserStateService) { }
 
   ngOnInit() {
+    this.profileForm.patchValue({email : this.userStateService.getEmail() })
   }
 
 }
