@@ -1,3 +1,39 @@
-<p>
-  login-home-view works!
-</p>
+
+<div class="container">
+  <div class="login-form">
+  <div class="main-div">
+      <div class="panel">
+     <h2>User Login</h2>
+     <p>Please enter your email and password</p>
+     </div>
+      <form id="Login" [formGroup]="profileForm" 
+      (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+  
+              <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+  
+          </div>
+          <div *ngIf="profileForm.get('email').errors">
+                  <span *ngIf="profileForm.get('email').errors.emailNotVaild" error>
+                    {{profileForm.get('email').errors.emailNotVaild}} </span>
+          </div>
+  
+          <div class="form-group">
+  
+              <input  formControlName="password" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+  
+          </div>
+          <div class="forgot">
+          <a (click)="forgotPassdWord()"> Forgot password?</a>
+  </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Login</button>
+  
+      </form>
+      </div>
+  </div>
+  </div>
+  
+  
+  
+  

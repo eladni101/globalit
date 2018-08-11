@@ -1,2 +1,3 @@
-export class IresponseServer {
+export interface IResponseServer {
+    HandleResponse(data:any)
 }
