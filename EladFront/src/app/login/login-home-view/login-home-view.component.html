@@ -24,6 +24,16 @@
               <input  formControlName="password" type="text" class="form-control" id="inputPassword" placeholder="Password" required>
   
           </div>
+          <div *ngIf="errorLogin">
+                <span error>
+                        Incorrect password
+                 </span>
+          </div>
+          <div *ngIf="userStateService.getUserForgot()">
+                <span send>
+                        password send to mail
+                 </span>
+          </div>
           <div class="forgot">
           <a (click)="forgotPassdWord()"> Forgot password?</a>
   </div>

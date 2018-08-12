@@ -10,4 +10,13 @@ img {
     margin-left: (X/2)px;
     margin-top: -(Y/2)px;
 }
-
+hr{
+    height: 5px;
+}
+.myName{
+    margin-left: 6%
+}
+h6{
+    float: left;
+    margin-right: 2%;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {UserStateService} from '../../services/common-services/user-state.service'
 @Component({
   selector: 'app-home-view',
   templateUrl: './home-view.component.html',
@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userStateService:UserStateService) { }
 
   ngOnInit() {
-    document.getElementsByTagName("body")[0].setAttribute("background",'null');
+    document.getElementsByTagName("body")[0].setAttribute("background",'');
   }
 
 }

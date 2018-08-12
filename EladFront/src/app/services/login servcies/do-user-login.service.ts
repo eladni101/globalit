@@ -13,7 +13,7 @@ export class DoUserLoginService {
       let currentUser = JSON.parse(localStorage.getItem("currentUser"))
      if(currentUser!=null){
         this.userStateService.setlogIn(true);
-        this.userStateService.setEmail(currentUser.email);
+        this.userStateService.setInformation(currentUser.lastName,currentUser.firstName,currentUser.email)
         this.router.navigateByUrl("home")
      }
      return true;
