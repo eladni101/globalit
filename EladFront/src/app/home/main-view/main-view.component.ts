@@ -7,7 +7,7 @@ import {UserStateService} from '../../services/common-services/user-state.servic
 })
 export class MainViewComponent implements OnInit {
 
-  constructor(private userStateService:UserStateService) { }
+  constructor(public userStateService:UserStateService) { }
 
   ngOnInit() {
     document.getElementsByTagName("body")[0].setAttribute("background",'');

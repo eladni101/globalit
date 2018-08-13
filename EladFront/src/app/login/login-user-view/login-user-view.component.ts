@@ -18,7 +18,7 @@ export class LoginUserViewComponent implements OnInit,IResponseServer,AfterViewI
     password: new FormControl('')
   });
   errorLogin=false;
-  constructor(private serverService:ServerService,private router : Router ,private userStateService :UserStateService ) { }
+  constructor(private serverService:ServerService,private router : Router ,public userStateService :UserStateService ) { }
 
   ngOnInit() {
     document.getElementsByTagName("body")[0].setAttribute("background",'LoginForm');
