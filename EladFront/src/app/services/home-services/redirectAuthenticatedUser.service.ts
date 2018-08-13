@@ -8,7 +8,7 @@ export class RedirectAuthenticatedUserService implements CanActivate {
   constructor(private userStateService:UserStateService,private router:Router) { }
   
     canActivate(){
-      let loogedIn=this.userStateService.getlogIn()
+      let loogedIn=this.userStateService.getlogInStateOfUser()
       if(!loogedIn){
         this.router.navigateByUrl("")
       }

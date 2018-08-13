@@ -12,7 +12,7 @@ export class RedirectUnauthenticatedUserService implements CanActivate {
     canActivate(){
       let currentUser = JSON.parse(localStorage.getItem("currentUser"))
      if(currentUser!=null){
-        this.userStateService.setlogIn(true);
+        this.userStateService.setlogInStateOfUser(true);
         this.userStateService.setInformation(currentUser.lastName,currentUser.firstName,currentUser.email)
         this.router.navigateByUrl("home")
      }

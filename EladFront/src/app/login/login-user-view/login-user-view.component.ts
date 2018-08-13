@@ -4,7 +4,7 @@ import {IResponseServer} from '../../common-class/iresponse-server'
 import {ServerService} from '../../services/common-services/server.service'
 import{Router} from '@angular/router'
 import {UserStateService} from '../../services/common-services/user-state.service'
-import {checkEmailValidator} from '../../validators/email-check'
+import {checkEmailValidator} from '../../validators/ValidateEmail'
 
 @Component({
   selector: 'app-login-user-view',
@@ -42,9 +42,9 @@ export class LoginUserViewComponent implements OnInit,IResponseServer,AfterViewI
      let lastName =  data.user.profile.last_name
      let email = this.profileForm.get('email').value
     localStorage.setItem("currentUser",JSON.stringify({email: email,firstName:firstName,lastName:lastName }));
-     this.userStateService.setlogIn(true)
+     this.userStateService.setlogInStateOfUser(true)
      this.userStateService.setInformation(lastName,firstName,email)
-     this.userStateService.setUserForgot(false)
+     this.userStateService.setUserResetPassword(false)
      this.router.navigateByUrl('home');
    }
   }

@@ -4,7 +4,7 @@ import {HttpModule} from '@angular/http';
 import {  Router, RouterModule } from '@angular/router';
 import { LoginUserViewComponent } from './login-user-view.component';
 import {RouterStub} from '../../common-class/RouterStub'
-import {checkEmailValidator } from '../../validators/email-check'
+import {checkEmailValidator } from '../../validators/ValidateEmail'
 import {RedirectUnauthenticatedUserService} from '../../services/login servcies/redirectUnauthenticatedUser.service'
 describe('LoginHomeViewComponent', () => {
   let component: LoginUserViewComponent;

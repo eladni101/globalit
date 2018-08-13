@@ -1,7 +1,7 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import {FormControl,FormGroup,Validators} from '@angular/forms'
 import {UserStateService} from '../../services/common-services/user-state.service'
-import {checkEmailValidator} from '../../validators/email-check'
+import {checkEmailValidator} from '../../validators/ValidateEmail'
 import{Router} from '@angular/router'
 import {IResponseServer} from '../../common-class/iresponse-server'
 import {ServerService} from '../../services/common-services/server.service'
@@ -33,7 +33,7 @@ export class ForgotPasswordViewComponent implements OnInit,IResponseServer,After
       this.errorForgot=true
     }
     else{
-      this.userStateService.setUserForgot(true)
+      this.userStateService.setUserResetPassword(true)
       this.router.navigateByUrl("");
     }
    }

@@ -1,30 +1,32 @@
 import { Injectable } from '@angular/core';
 import {UserDto} from '../../common-class/user-dto'
-
+import {loginStateDto} from '../../common-class/login-state-dto'
 @Injectable({
   providedIn: 'root'
 })
 export class UserStateService {
-  user :UserDto ;
-  logedIn :boolean=false;
-  passwordSendToMail:boolean=false;
-  constructor() { this.user=new UserDto()}
+   user :UserDto ;
+  private loginState :loginStateDto; 
+  constructor() { 
+    this.user=new UserDto()
+    this.loginState=new loginStateDto();
+  }
 
   setEmail(email :string){this.user.email=email;}
 
   getEmail(){return this.user.email}
 
-  setlogIn(log:boolean){this.logedIn=log}
+  setlogInStateOfUser(doUserlogIn:boolean){this.loginState.IsUserLogIn=doUserlogIn}
 
-  getlogIn(){return this.logedIn}
+  getlogInStateOfUser(){return this.loginState.IsUserLogIn}
 
   getUserFirstName(){return this.user.first_name}
 
   getUserLastName(){return this.user.last_name}
 
-  setUserForgot(IsForgot){this.passwordSendToMail=IsForgot}
+  setUserResetPassword(IsUserReset:boolean){this.loginState.IsUserResetPassword=IsUserReset}
 
-  getUserForgot(){return this.passwordSendToMail}
+  getUserForgot(){return this.loginState.IsUserResetPassword}
   
   setInformation(lastName,firstName,email){
     this.user.last_name=lastName;

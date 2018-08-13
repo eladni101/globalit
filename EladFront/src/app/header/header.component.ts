@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     }
   
     logout(){
-      this.userStateService.setlogIn(false)
+      this.userStateService.setlogInStateOfUser(false)
       localStorage.setItem("currentUser",null);
     }
     
