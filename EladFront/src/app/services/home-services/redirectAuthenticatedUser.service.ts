@@ -4,7 +4,7 @@ import {UserStateService} from '../common-services/user-state.service'
 @Injectable({
   providedIn: 'root'
 })
-export class CanMoveHomeService {
+export class RedirectAuthenticatedUserService implements CanActivate {
   constructor(private userStateService:UserStateService,private router:Router) { }
   
     canActivate(){

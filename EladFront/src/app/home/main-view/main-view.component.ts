@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {UserStateService} from '../../services/common-services/user-state.service'
 @Component({
-  selector: 'app-home-view',
-  templateUrl: './home-view.component.html',
-  styleUrls: ['./home-view.component.css']
+  selector: 'app-main-view',
+  templateUrl: './main-view.component.html',
+  styleUrls: ['./main-view.component.css']
 })
-export class HomeViewComponent implements OnInit {
+export class MainViewComponent implements OnInit {
 
   constructor(private userStateService:UserStateService) { }
 
   ngOnInit() {
     document.getElementsByTagName("body")[0].setAttribute("background",'');
   }
+  
 
 }

@@ -4,7 +4,7 @@ import {CanActivate,Router} from '@angular/router'
 @Injectable({
   providedIn: 'root'
 })
-export class DoUserLoginService {
+export class RedirectUnauthenticatedUserService implements CanActivate {
 
   constructor(private userStateService:UserStateService,private router:Router) { }
   

@@ -6,11 +6,11 @@ import{Router} from '@angular/router'
 import {IResponseServer} from '../../common-class/iresponse-server'
 import {ServerService} from '../../services/common-services/server.service'
 @Component({
-  selector: 'app-login-forgot-view',
-  templateUrl: './login-forgot-view.component.html',
-  styleUrls: ['./login-forgot-view.component.css']
+  selector: 'app-forgot-password-view',
+  templateUrl: './forgot-password-view.component.html',
+  styleUrls: ['./forgot-password-view.component.css']
 })
-export class LoginForgotViewComponent implements OnInit,IResponseServer,AfterViewInit {
+export class ForgotPasswordViewComponent implements OnInit,IResponseServer,AfterViewInit {
 
   profileForm = new FormGroup({
     email: new FormControl(''),

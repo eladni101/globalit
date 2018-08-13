@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CanMoveHomeService} from '../home-services/can-move-home.service'
-import {DoUserLoginService} from '../login servcies/do-user-login.service'
+import {RedirectAuthenticatedUserService} from '../home-services/redirectAuthenticatedUser.service'
+import {RedirectUnauthenticatedUserService} from '../login servcies/redirectUnauthenticatedUser.service'
 import {ServerService} from '../common-services/server.service'
 import {UserStateService} from '../common-services/user-state.service'
 @NgModule({
@@ -9,6 +9,6 @@ import {UserStateService} from '../common-services/user-state.service'
     CommonModule
   ],
   declarations: [],
-  providers:[CanMoveHomeService,DoUserLoginService,ServerService,UserStateService]
+  providers:[RedirectAuthenticatedUserService,RedirectUnauthenticatedUserService,ServerService,UserStateService]
 })
 export class ServicesModule { }

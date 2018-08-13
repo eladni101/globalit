@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule,Routes} from '@angular/router'
 
-import {CanMoveHomeService} from '../../services/home-services/can-move-home.service'
+import {RedirectAuthenticatedUserService} from '../../services/home-services/redirectAuthenticatedUser.service'
 
-import { HomeViewComponent } from '../home-view/home-view.component';
+import { MainViewComponent } from '../main-view/main-view.component';
 
 import {HeaderComponent} from '../../header/header.component'
 const HomeRoutes: Routes = [
-  {path:'home',canActivate:[CanMoveHomeService],component:HomeViewComponent}
+  {path:'home',canActivate:[RedirectAuthenticatedUserService],component:MainViewComponent}
 ]
 
 @NgModule({
@@ -16,7 +16,7 @@ const HomeRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(HomeRoutes)
   ],
-  declarations: [HomeViewComponent,HeaderComponent],
-  exports:[HomeViewComponent,HeaderComponent]
+  declarations: [MainViewComponent,HeaderComponent],
+  exports:[MainViewComponent,HeaderComponent]
 })
 export class HomeModule { }

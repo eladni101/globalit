@@ -8,7 +8,7 @@ export class UserStateService {
   user :UserDto ;
   logedIn :boolean=false;
   passwordSendToMail:boolean=false;
-  constructor() { this.user=new UserDto('')}
+  constructor() { this.user=new UserDto()}
 
   setEmail(email :string){this.user.email=email;}
 

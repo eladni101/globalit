@@ -7,11 +7,11 @@ import {UserStateService} from '../../services/common-services/user-state.servic
 import {checkEmailValidator} from '../../validators/email-check'
 
 @Component({
-  selector: 'app-login-home-view',
-  templateUrl: './login-home-view.component.html',
-  styleUrls: ['./login-home-view.component.css']
+  selector: 'app-login-user-view',
+  templateUrl: './login-user-view.component.html',
+  styleUrls: ['./login-user-view.component.css']
 })
-export class LoginHomeViewComponent implements OnInit,IResponseServer,AfterViewInit{
+export class LoginUserViewComponent implements OnInit,IResponseServer,AfterViewInit{
 
   profileForm = new FormGroup({
     email: new FormControl(''),

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {RouterModule,Routes} from '@angular/router'
 
-import { LoginHomeViewComponent } from '../login-home-view/login-home-view.component';
-import { LoginForgotViewComponent } from '../login-forgot-view/login-forgot-view.component';
-import {DoUserLoginService} from '../../services/login servcies/do-user-login.service'
+import { LoginUserViewComponent } from '../login-user-view/login-user-view.component';
+import { ForgotPasswordViewComponent } from '../forgot-password-view/forgot-password-view.component';
+import {RedirectUnauthenticatedUserService} from '../../services/login servcies/redirectUnauthenticatedUser.service'
 
 const LoginRoutes: Routes = [
-  {path:'',canActivate:[DoUserLoginService],component:LoginHomeViewComponent},
-  {path:'forgot',canActivate:[DoUserLoginService],component:LoginForgotViewComponent},
+  {path:'',canActivate:[RedirectUnauthenticatedUserService],component:LoginUserViewComponent},
+  {path:'forgot',canActivate:[RedirectUnauthenticatedUserService],component:ForgotPasswordViewComponent},
 ]
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ const LoginRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(LoginRoutes)
   ],
-  declarations: [LoginHomeViewComponent, LoginForgotViewComponent],
-  exports:[LoginHomeViewComponent,LoginForgotViewComponent]
+  declarations: [LoginUserViewComponent, ForgotPasswordViewComponent],
+  exports:[LoginUserViewComponent,ForgotPasswordViewComponent]
 })
 export class LoginModule { }
